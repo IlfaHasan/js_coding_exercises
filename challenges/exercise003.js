@@ -27,23 +27,7 @@ export function getTotalSubjects(people) {
   const subArray=people.map((x)=>x.subjects);
   return subArray.length;
 
- /* var i;
-  var count=0;
-  for(i=0;i<people.legth;i++)
-  {
-    if(people[i].subjects.length==0)
-    {
-      var count=0;
-    }
-    else
-    {
-      count+=people[i].subjects.length;
-    }
-
-  }
-   return count;*/
-
-  // Your code here!
+   // Your code here!
 }
 
 export function checkIngredients(menu, ingredient) {

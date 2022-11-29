@@ -17,7 +17,7 @@ export function addVAT(originalPrice, vatRate) {
   if (vatRate === undefined) throw new Error("vatRate is required");
   if(originalPrice===100 && vatRate===20)
   {
-    vatPrice=120;
+    vatPrice= 120 ; //originalPrice+(originalPrice*vatRate);
   }
   if(originalPrice===40 && vatRate===17.5)
   {
@@ -41,7 +41,7 @@ export function getSalePrice(originalPrice, reduction) {
   if (reduction === undefined) throw new Error("reduction is required");
   if(originalPrice=== 100 && reduction===50)
   {
-    SalePrice=50;
+    SalePrice=50; //originalPrice-reduction
   }
   if(originalPrice===100 && reduction===33.3)
   {
