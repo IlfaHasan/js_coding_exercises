@@ -60,10 +60,17 @@ export const arrShift = (arr) => {
 export const findNeedle = (haystack, searchTerm) => {
   if (haystack === undefined) throw new Error("haystack is required");
   if (searchTerm === undefined) throw new Error("searchTerm is required");
-  let result=false;
-  if (Object.values(haystack).indexOf(searchTerm) > -1) {result=true;}
-    return result;
-  
+  let newArray= Object.values(haystack);
+  const lowerCaseHaystack= newArray.map(value=>value.toLowerCase());
+  return lowerCaseHaystack.includes(searchTerm);
+
+
+  /*haystack = Object.fromEntries(
+    Object.entries(haystack).map(([key, value]) => [key, value.toLowerCase()])
+  );
+   let exists = Object.values(haystack).includes(searchTerm.toLowerCase());
+  return exists;*/
+    
     // Your code here!
 };
 
