@@ -15,8 +15,7 @@ export const sumMultiples = (arr) => {
  */
 export const isValidDNA = (str) => {
   if (str === undefined) throw new Error("str is required");
-  //let dnaArray = str.split('');
-  return (!/[^GCTA]/.test(str));
+    return (!/[^GCTA]/.test(str));
   
   };
 
@@ -27,6 +26,15 @@ export const isValidDNA = (str) => {
  */
 export const getComplementaryDNA = (str) => {
   if (str === undefined) throw new Error("str is required");
+  let sequence = {
+    "A": "T",
+    "T": "A",
+    "G": "C",
+    "C": "G"
+}
+    return str.replace(/A|T|G|C/g, function(matched) {
+    return sequence[matched];
+});
 };
 
 /**
@@ -52,6 +60,7 @@ export const isItPrime = (n) => {
 export const createMatrix = (n, fill) => {
   if (n === undefined) throw new Error("n is required");
   if (fill === undefined) throw new Error("fill is required");
+  
 };
 
 /**
