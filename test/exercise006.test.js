@@ -3,6 +3,7 @@ import {
     getComplementaryDNA,
     createMatrix,
     isItPrime,
+    sumMultiples,
         } from "../challenges/exercise006";
 
     describe("isValidDNA", () => {
@@ -54,3 +55,17 @@ import {
           expect(isItPrime(8)).toBe(false);
         });
       });
+
+      describe("sumMultiples", () => {
+        test("returns sum of numbers in the array which are multiples of both 3 and 5", () => {
+          expect(sumMultiples([2,5,15,7,30])).toBe(45);
+        });
+      
+        test("returns sum of numbers which are multiples of 3 and 5", () => {
+          expect(sumMultiples([2,6,8,9,12,15])).toBe(15);
+        });
+        test("returns sum of numbers which are multiples of 3 and 5", () => {
+            expect(sumMultiples([15,14,10,30,60])).toBe(105);
+          });
+      
+       });
