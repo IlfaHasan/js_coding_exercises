@@ -2,6 +2,7 @@ import {
     isValidDNA,
     getComplementaryDNA,
     createMatrix,
+    isItPrime,
         } from "../challenges/exercise006";
 
     describe("isValidDNA", () => {
@@ -33,8 +34,23 @@ import {
 
        describe("createMatrix", () => {
         test("returns an n dimensional array with all value fill", () => {
-          expect(createMatrix(2,"wow")).toEqual([[wow, wow][wow, wow]]);
-                  });
-      
+          expect(createMatrix(2, "wow")).toEqual([
+            ["wow", "wow"]
+            ["wow", "wow"]]);
+          });
            
        });
+       describe("isItPrime", () => {
+        test("returns true for a prime number", () => {
+          expect(isItPrime(7)).toBe(true);
+          expect(isItPrime(8)).toBe(false);
+        });
+      
+        test("if the input number is prime nu,ber return true", () => {
+          expect(isItPrime(3)).toBe(true);
+        });
+      
+        test("if the input number is not prime return false", () => {
+          expect(isItPrime(8)).toBe(false);
+        });
+      });
