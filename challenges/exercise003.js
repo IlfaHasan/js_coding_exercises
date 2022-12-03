@@ -24,22 +24,18 @@ export function camelCaseWords(words) {
 
 export function getTotalSubjects(people) {
   if (people === undefined) throw new Error("people is required");
-  const subArray=people.map((x)=>x.subjects);
-  return subArray.length;
-
+  
+  const count = people.filter((obj) => obj.subjects !== []).length;
+  return count;
+ // return count;
    // Your code here!
 }
 
 export function checkIngredients(menu, ingredient) {
   if (menu === undefined) throw new Error("menu is required");
   if (!ingredient) throw new Error("ingredient is required");
-  var ingredientFound=false;
-  if (menu.filter(e => e.ingredients == ingredient).length > 0)
-  {
-    ingredientFound= true;
-  }
-   
-  return ingredientFound;
+  return (menu.filter(e => e.ingredients === ingredient).length > 0)
+ 
   // Your code here!
 }
 
