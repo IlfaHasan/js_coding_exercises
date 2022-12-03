@@ -22,22 +22,14 @@ export const createRange = (start, end, step) => {
   if (start === undefined) throw new Error("start is required");
   if (end === undefined) throw new Error("end is required");
   if (step === undefined)
-    console.log(
-      "FYI: Optional step parameter not provided. Remove this check once you've handled the optional step!"
-    );
-    let arr=[];
-    arr[0]=start;
-    
-    for(let i=1;arr[i]<=end;i++)
-      { 
-        if(step!==null)
-        {arr[i]+=1;} 
-        else
-        {
-          arr[i]+=step;
-        }        
-      }
-      return arr;
+    {
+      step=1;
+    }      
+    let a = [start], b = start;
+    while (b < end) {
+        a.push(b += step);
+    }
+    return a;   
     
 };
 
@@ -74,6 +66,8 @@ export const getScreentimeAlertList = (users, date) => {
   if (users === undefined) throw new Error("users is required");
   if (date === undefined) throw new Error("date is required");
 };
+
+
 
 /**
  * This function will receive a hexadecimal color code in the format #FF1133. A hexadecimal code is a number written in hexadecimal notation, i.e. base 16. If you want to know more about hexadecimal notation:
