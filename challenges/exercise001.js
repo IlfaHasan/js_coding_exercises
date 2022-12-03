@@ -80,11 +80,12 @@ export function reverseWord(word) {
 
 export function reverseAllWords(words) {
   if (words === undefined) throw new Error("words is required");
-  let reverseWordArr = words.split(" ").map(word => word.split("").reverse().join(""));
-  console.log(reverseWordArr);
-  return reverseWordArr.join(" ");
+  return words.map(item => item.split('').reverse().join(''));
+  //let reverseWordArr = words.split(" ").map(word => word.split("").reverse().join(""));
+ 
+  }
   // Add your code here!
-}
+
 
 export function countLinuxUsers(users) {
   if (users === undefined) throw new Error("users is required");
@@ -93,16 +94,16 @@ export function countLinuxUsers(users) {
 
 export function getMeanScore(scores) {
   if (scores === undefined) throw new Error("scores is required");
- var sum=0;
-  //var meanScore;
-  for(var number of scores)
+ let sum=0;
+  
+  for(let number of scores)
   {
     sum+=number;
   }
    let meanScore=sum/scores.length;
    if(meanScore - Math.floor(meanScore) != 0)
    {
-    meanScore=meanScore.toFixed(2);
+    meanScore=parseFloat(meanScore.toFixed(2));
    }
   return meanScore;
 
@@ -111,7 +112,7 @@ export function getMeanScore(scores) {
 
 export function simpleFizzBuzz(n) {
   if (n === undefined) throw new Error("n is required");
-  var result;
+  let result="";
   if(n%3===0)
   {
     result="fizz";
