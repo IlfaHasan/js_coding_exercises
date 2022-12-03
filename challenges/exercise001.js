@@ -12,50 +12,21 @@ export function generateInitials(firstName, lastName) {
 }
 
 export function addVAT(originalPrice, vatRate) {
-  var vatPrice
-  if (originalPrice === undefined) throw new Error("originalPrice is requied");
+    if (originalPrice === undefined) throw new Error("originalPrice is requied");
   if (vatRate === undefined) throw new Error("vatRate is required");
-  if(originalPrice===100 && vatRate===20)
-  {
-    vatPrice= 120 ; //originalPrice+(originalPrice*vatRate);
-  }
-  if(originalPrice===40 && vatRate===17.5)
-  {
-    vatPrice=47;
-  }
-  if(originalPrice===33.5 && vatRate===17.5)
-  {
-    vatPrice=39.36;
-  }
-  if(originalPrice===25 && vatRate===0)
-  {
-    vatPrice=25;
-  }
-  return vatPrice;
+  
+    let vatPrice= originalPrice+(originalPrice*(vatRate/100));
+    
+    return vatPrice;
   // Add your code here!
 }
 
 export function getSalePrice(originalPrice, reduction) {
-  var SalePrice;
+
   if (originalPrice === undefined) throw new Error("originalPrice is required");
   if (reduction === undefined) throw new Error("reduction is required");
-  if(originalPrice=== 100 && reduction===50)
-  {
-    SalePrice=50; //originalPrice-reduction
-  }
-  if(originalPrice===100 && reduction===33.3)
-  {
-    SalePrice=66.7;
-  }
-  if(originalPrice===79.99 && reduction===15)
-  {
-    SalePrice=67.99;
-  }
-  if(originalPrice===50 && reduction===0)
-  {
-    SalePrice=50;
-  }
-  return SalePrice;
+  let SalePrice=originalPrice-(originalPrice*(reduction/100)).toFixed(2);
+    return SalePrice;
   // Add your code here!
 }
 
