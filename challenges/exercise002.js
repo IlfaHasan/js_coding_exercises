@@ -6,7 +6,7 @@ export function getFillings(sandwich) {
 
 export function isFromManchester(person) {
   if (person === undefined) throw new Error("person is required");
-  var isManchester= false;
+  let isManchester= false;
   if(person.city==='Manchester')
   {
     isManchester=true;
@@ -30,7 +30,7 @@ export function countSheep(arr) {
 
 export function hasMPostCode(person) {
   if (person === undefined) throw new Error("person is required");
-  var hasPostCode=false;
+  let hasPostCode=false;
   if(person.address.postCode.substring(0,1)=='M' && person.address.city==='Manchester')
   {
     hasPostCode=true;
