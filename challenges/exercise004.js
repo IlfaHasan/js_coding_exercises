@@ -27,6 +27,14 @@ export function getIntegers(nums) {
 
 export function getCities(users) {
   if (!users) throw new Error("users is required");
+  const retrieveProperties = (users = {}) => {
+    const res = [];
+    for(key in users){
+       res.push([ key, users[key] ]);
+    };
+    return res;
+ };
+    return retrieveProperties;
 }
  
 
