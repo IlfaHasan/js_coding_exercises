@@ -2,6 +2,8 @@
 
 export function printColours(colours) {
   if (!colours) throw new Error("colour is required");
+   const [...rest]=colours;
+   return rest;
   // Your solution using the spread operator here!
 }
 

@@ -1,8 +1,8 @@
 import {
     createRange,
     sumDigits,
-    getScreentimeAlertList,
     hexToRGB,
+    getScreentimeAlertList,
      } from "../challenges/exercise007";
         
     describe("createRange", () => {
@@ -38,10 +38,12 @@ import {
 
   describe("getScreentimeAlertList", () => {
     test("returns the user names of users with screentime greater than 100", () => {
-      expect(getScreentimeAlertList([{username: "beth_1234",
-      name: "Beth Smith",
-      screenTime: [{ date: "2019-05-01", usage: { twitter: 34, instagram: 22, facebook: 40} },
-                   { date: "2019-05-02", usage: { twitter: 56, instagram: 40, facebook: 31} },
-                   { date: "2019-05-03", usage: { twitter: 12, instagram: 15, facebook: 19} },]}]),"2019-05-02").toEqual(["beth_1234"]);      
+        const users=[{username: "beth_1234",
+        name: "Beth Smith",
+        screenTime: [{ date: "2019-05-01", usage: { twitter: 34, instagram: 22, facebook: 40} },
+                     { date: "2019-05-02", usage: { twitter: 56, instagram: 40, facebook: 31} },
+                     { date: "2019-05-03", usage: { twitter: 12, instagram: 15, facebook: 19} },]}]
+      expect(getScreentimeAlertList(users,"2019-05-01")).toEqual(["beth_1234"]);
+           
     });  
   });
