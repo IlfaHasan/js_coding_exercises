@@ -16,9 +16,8 @@ export function addVAT(originalPrice, vatRate) {
   if (vatRate === undefined) throw new Error("vatRate is required");
   
     let vatPrice= originalPrice+(originalPrice*(vatRate/100));
-    
-    return vatPrice;
-  // Add your code here!
+    if(vatPrice%1===0){return vatPrice;}    
+    else{return parseFloat(vatPrice.toFixed(2));}
 }
 
 export function getSalePrice(originalPrice, reduction) {
@@ -27,14 +26,13 @@ export function getSalePrice(originalPrice, reduction) {
   if (reduction === undefined) throw new Error("reduction is required");
   let SalePrice=originalPrice-(originalPrice*(reduction/100)).toFixed(2);
     return SalePrice;
-  // Add your code here!
+  
 }
 
 export function getMiddleCharacter(str) {
   if (str === undefined) throw new Error("str is required");
   return str.substr(Math.ceil(str.length / 2 - 1), str.length % 2 === 0 ? 2 : 1);
   
-  // Add your code here!
 }
 
 export function reverseWord(word) {
@@ -46,7 +44,7 @@ export function reverseWord(word) {
   newWord+=word[i];
  }
  return newWord;
-  // Add your code here!
+  
 }
 
 export function reverseAllWords(words) {
@@ -55,7 +53,7 @@ export function reverseAllWords(words) {
   //let reverseWordArr = words.split(" ").map(word => word.split("").reverse().join(""));
  
   }
-  // Add your code here!
+  
 
 
 export function countLinuxUsers(users) {
@@ -78,8 +76,7 @@ export function getMeanScore(scores) {
    }
   return meanScore;
 
-  // Add your code here!
-}
+  }
 
 export function simpleFizzBuzz(n) {
   if (n === undefined) throw new Error("n is required");
@@ -101,5 +98,5 @@ export function simpleFizzBuzz(n) {
     result="fizzbuzz";
   }
   return result;
-  // Add your code here!
+  
 }
