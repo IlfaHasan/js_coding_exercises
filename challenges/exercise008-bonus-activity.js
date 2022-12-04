@@ -4,13 +4,13 @@ export function printColours(colours) {
   if (!colours) throw new Error("colour is required");
    const [...rest]=colours;
    return rest;
-  // Your solution using the spread operator here!
-}
+ }
 
 export function shoppingList(list, newItem) {
   if (!list) throw new Error("list is required");
   if (!newItem) throw new Error("newItem is required");
-  // Your solution using the spread operator here!
+  const updatedShoppingList=list.concat(newItem);
+  return updatedShoppingList;
 }
 
 export function highestNumber(numbers) {
