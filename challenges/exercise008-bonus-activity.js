@@ -9,8 +9,7 @@ export function printColours(colours) {
 export function shoppingList(list, newItem) {
   if (!list) throw new Error("list is required");
   if (!newItem) throw new Error("newItem is required");
-  const updatedShoppingList = list.concat(newItem);
-  return updatedShoppingList;
+  return list.concat(newItem);
 }
 
 export function highestNumber(numbers) {
@@ -20,12 +19,11 @@ export function highestNumber(numbers) {
 
 export function splitThatString(string) {
   if (!string) throw new Error("string is required");
-  const splitArray = string.split("");
-  return splitArray;
+  return string.split("");
 }
 
 export function addressLookUp(user) {
   if (!user) throw new Error("user is required");
-  const postcodePresent = user.address ? user.address.postcode : undefined;
-  return postcodePresent;
+  return user.address ? user.address.postcode : undefined;
+  
 }
