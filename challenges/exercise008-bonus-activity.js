@@ -27,5 +27,8 @@ export function splitThatString(string) {
 
 export function addressLookUp(user) {
   if (!user) throw new Error("user is required");
+    const postcodePresent=user.address?user.address.postcode:undefined;
+    return postcodePresent;
+  
   // Your solution using optional chaining here!
 }
