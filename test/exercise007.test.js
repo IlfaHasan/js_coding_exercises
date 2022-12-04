@@ -2,6 +2,7 @@ import {
     createRange,
     sumDigits,
     getScreentimeAlertList,
+    hexToRGB,
      } from "../challenges/exercise007";
         
     describe("createRange", () => {
@@ -27,6 +28,12 @@ import {
       expect(sumDigits(100)).toBe(1);
     });
   
+  });
+  describe("hexToRGB", () => {
+    test("returns RGB format of the hexadecimal format", () => {
+      expect(hexToRGB('1502BE')).toEqual([21, 2, 190]);      
+    });  
+      
   });
 
   describe("getScreentimeAlertList", () => {
