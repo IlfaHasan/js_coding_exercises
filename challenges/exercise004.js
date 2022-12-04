@@ -27,14 +27,8 @@ export function getIntegers(nums) {
 
 export function getCities(users) {
   if (!users) throw new Error("users is required");
-  const retrieveProperties = (users = {}) => {
-    const res = [];
-    for(key in users){
-       res.push([ key, users[key] ]);
-    };
-    return res;
- };
-    return retrieveProperties;
+  const newArray=users.map((x)=>(x.data.displayName));
+  return newArray;
 }
  
 
@@ -48,6 +42,11 @@ export function getSquareRoots(nums) {
 export function findSentencesContaining(sentences, str) {
   if (!sentences) throw new Error("sentences is required");
   if (!str) throw new Error("str is required");
+    const match=sentences.find(element=>{if(element.toLowerCase().includes(str.toLowerCase()))
+  {
+    return true
+  }})
+  return [match];
   
 }
 

@@ -1,8 +1,7 @@
 export function getSquares(nums) {
   if (nums === undefined) throw new Error("nums is required");
   return nums.map(x=>Math.pow(x,2));
-  // Your code here!
-}
+  }
 
 export function camelCaseWords(words) {
   if (words === undefined) throw new Error("words is required");
@@ -19,16 +18,17 @@ export function camelCaseWords(words) {
     result+= tempWord;
   }
   return result;
-  // Your code here!
+  
 }
 
 export function getTotalSubjects(people) {
   if (people === undefined) throw new Error("people is required");
+  let count=[];
+  count = people.filter((obj) => (obj.subjects.length>0));
   
-  const count = people.filter((obj) => obj.subjects !== []).length;
-  return count;
- // return count;
-   // Your code here!
+  return count.subjects.length;
+
+    
 }
 
 export function checkIngredients(menu, ingredient) {
@@ -36,7 +36,7 @@ export function checkIngredients(menu, ingredient) {
   if (!ingredient) throw new Error("ingredient is required");
   return (menu.filter(e => e.ingredients === ingredient).length > 0)
  
-  // Your code here!
+  
 }
 
 export function duplicateNumbers(arr1, arr2) {
@@ -45,5 +45,5 @@ export function duplicateNumbers(arr1, arr2) {
   arr1 = arr1.filter(val => arr2.includes(val));
    arr1= arr1.sort();
    return [...new Set(arr1)];
-  // Your code here!
+  
 }
