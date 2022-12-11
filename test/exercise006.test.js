@@ -34,13 +34,19 @@ import {
        });
 
        describe("createMatrix", () => {
-        test("returns an n dimensional array with all value fill", () => {
-          expect(createMatrix(2, "wow")).toEqual([
-            ["wow", "wow"]
-            ["wow", "wow"]]);
-          });
-           
-       });
+        test('it throws an error if not pass parameters ', () => {
+            expect(() => {
+                createMatrix();
+            }).toThrow("n is required");
+            expect(() => {
+                createMatrix(5);
+            }).toThrow("fill is required");
+        });
+        test('should return matrix ', () => {
+            
+            expect(createMatrix(3, 'fn')).toStrictEqual([['fn', 'fn', 'fn'], ['fn', 'fn', 'fn'], ['fn', 'fn', 'fn']]);
+        });
+    });
        describe("isItPrime", () => {
         test("returns true for a prime number", () => {
           expect(isItPrime(7)).toBe(true);
