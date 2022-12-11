@@ -4,6 +4,7 @@ import {
     createMatrix,
     isItPrime,
     sumMultiples,
+    areWeCovered,
         } from "../challenges/exercise006";
 
     describe("isValidDNA", () => {
@@ -75,3 +76,37 @@ import {
           });
       
        });
+
+       describe("areWeCovered", () => {
+        test('it throws error send undefined staff or day', () => {
+            expect(() => {
+                areWeCovered(areWeCovered());
+            }).toThrow("staff is required");
+            expect(() => {
+                areWeCovered(([{ name: "ilfa", rota: ["Monday", "Wednesday"] }]));
+            }).toThrow("day is required");
+    
+    
+        });
+        test('it returns false , if  there are no  staff', () => {
+            expect(areWeCovered([], 'Saturday')).toBe(false);
+        });
+        test('it returns false , if  there are  staff but not schedual to work ', () => {
+            const staff = [
+                { name: "ilfa", rota: ["Monday", "Wednesday"] },
+                { name: "sarah", rota: ["Monday", "Wednesday"] },
+                { name: "Norah", rota: ["Monday", "Wednesday"] },
+                { name: "maryam", rota: ["Monday", "Wednesday"] }
+            ];
+            expect(areWeCovered(staff, 'Saturday')).toStrictEqual(false);
+        });
+        test('it returns true , if  there are more than 3 staff  ', () => {
+            const staff = [
+                { name: "ilfa", rota: ["Monday", "Wednesday"] },
+                { name: "sarah", rota: ["Monday", "Wednesday"] },
+                { name: "Norah", rota: ["Monday", "Wednesday"] },
+                { name: "maryam", rota: ["Monday", "Wednesday"] }
+            ];
+            expect(areWeCovered(staff, 'Monday')).toBe(true);
+        });
+    });

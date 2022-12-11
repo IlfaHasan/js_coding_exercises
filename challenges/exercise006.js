@@ -101,7 +101,18 @@ export const isItPrime = (n) => {
  * @param {String} day
  * @returns {Boolean}
  */
-export const areWeCovered = (staff, day) => {
+ export const areWeCovered = (staff, day) => {
   if (staff === undefined) throw new Error("staff is required");
   if (day === undefined) throw new Error("day is required");
-};
+  if (staff === 0) {
+    return false;
+  }
+  let countOfStaff = 0;
+  for (const key in staff) {
+    if (staff[key].rota.includes(day)) {
+      countOfStaff++;
+    }
+  }
+  return countOfStaff >= 3;
+
+  };
