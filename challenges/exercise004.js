@@ -27,27 +27,27 @@ export function getIntegers(nums) {
 
 export function getCities(users) {
   if (!users) throw new Error("users is required");
-  const newArray=users.map((x)=>(x.data.displayName));
-  return newArray;
+  const res = [];
+  users.forEach(user => {
+    res.push(user.data.city.displayName);
+  });
+  return res;
 }
  
 
 export function getSquareRoots(nums) {
   if (!nums) throw new Error("nums is required");
-  const sqrtArray= nums.map((num)=> Math.sqrt(num).toFixed(2));
-  return sqrtArray;
+  return nums.map(num => {
+    const numSqrt = Math.sqrt(num);
+    return (numSqrt % 1 ? parseFloat(numSqrt.toFixed(2)) : numSqrt);
+  });
   
 }
 
 export function findSentencesContaining(sentences, str) {
   if (!sentences) throw new Error("sentences is required");
   if (!str) throw new Error("str is required");
-    const match=sentences.find(element=>{if(element.toLowerCase().includes(str.toLowerCase()))
-  {
-    return true
-  }})
-  return [match];
-  
+  return sentences.filter(sentence => sentence.toLowerCase().includes(str.toLowerCase()));
 }
 
 export function getLongestSides(triangles) {

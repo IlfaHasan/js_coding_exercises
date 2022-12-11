@@ -55,13 +55,11 @@ export const arrShift = (arr) => {
 export const findNeedle = (haystack, searchTerm) => {
   if (haystack === undefined) throw new Error("haystack is required");
   if (searchTerm === undefined) throw new Error("searchTerm is required");
-  if (typeof haystack === "string") return haystack.includes(searchTerm);
-  return Object.values(haystack).some(val => findNeedle(searchTerm, val));
-
-
-//let newArray =Object.values(haystack);
-//let findArray = newArray.find(a =>a.includes(searchTerm))
-//return (findArray.length>0);
+  for (const key in haystack) {
+    if (haystack[key].toString().toLowerCase().includes(searchTerm.toLowerCase()))
+      return true;
+  }
+  return false;
 };
 
 export const getWordFrequencies = (str) => {

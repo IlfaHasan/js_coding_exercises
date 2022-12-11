@@ -23,20 +23,21 @@ export function camelCaseWords(words) {
 
 export function getTotalSubjects(people) {
   if (people === undefined) throw new Error("people is required");
-  let count=[];
-  count = people.filter((obj) => (obj.subjects.length>0));
-  
-  return count.subjects.length;
-
-    
+  let totalSubjectsCount = 0;
+  people.forEach(student => {
+    totalSubjectsCount += student.subjects.length;
+  });
+  return totalSubjectsCount;  
 }
 
 export function checkIngredients(menu, ingredient) {
   if (menu === undefined) throw new Error("menu is required");
   if (!ingredient) throw new Error("ingredient is required");
-  return (menu.filter(e => e.ingredients === ingredient).length > 0)
- 
-  
+  return (menu.some(receipe => {
+    return receipe.ingredients.some(i => {
+      return i === ingredient;
+    });
+  }));
 }
 
 export function duplicateNumbers(arr1, arr2) {
